@@ -17,9 +17,12 @@ function onFormInput(evt) {
     
 }
 function onFormSubmit(evt) {
-    evt.preventDefault();
-    evt.currentTarget.reset();
-localStorage.removeItem(SAVED_KEY)
+  evt.preventDefault();
+  const dataFromStorage = JSON.parse(localStorage.getItem(SAVED_KEY));
+  console.log(dataFromStorage);
+  evt.currentTarget.reset();
+  localStorage.removeItem(SAVED_KEY)
+  
 }
  
 function populateForm() {
